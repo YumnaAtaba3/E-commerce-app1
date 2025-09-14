@@ -78,7 +78,7 @@ This project is built using **HTML, CSS, and Vanilla JavaScript** (no frameworks
 
 ### 💻 Author
 
-Developed by **[Yumna ataba](https://github.com/Yumnaat3)**
+Developed by **[Yumna ataba](https://github.com/YumnaAtaba3)**
 
 ---
 
