@@ -81,5 +81,3 @@ This project is built using **HTML, CSS, and Vanilla JavaScript** (no frameworks
 Developed by **[Yumna ataba](https://github.com/YumnaAtaba3)**
 
 ---
-
-Would you like me to tailor this README to include installation steps for hosting (like GitHub Pages) or add screenshots sections?
