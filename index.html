@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce-app</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+<header>
+    <div class="logo">
+        <div class="wrapper"> <svg> <text x="50%" y="50%" dy=".35em" text-anchor="middle"> x-Beat </text> </svg> </div>
+    </div>
+    <div class="icons">
+        <div class="search-box"> <i class="fas fa-search search-icon"></i> <input type="text" placeholder="Search..." />
+        </div>
+        <div class="cart"> <i class="fas fa-shopping-cart"></i> <span>0</span> </div> <!-- User Dropdown -->
+        <div class="user-menu"> <i class="fas fa-user user-icon"></i>
+            <div class="dropdown">
+                <p><strong>John Doe</strong></p>
+                <p class="email">john@example.com</p>
+                <hr> <!-- Custom Language Dropdown -->
+                <div class="lang-select">
+                    <div class="selected">English</div>
+                    <ul class="options"></ul>
+                </div>
+                <hr> <button class="logout-btn">Logout</button>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide hero-text">
+                        <h2>JBL Live 660NC</h2>
+                        <h1>Keep The Noise Out,<br>Or In. You Choose.</h1>
+                        <div class="price">$9,999 <del>$14,999</del></div>
+                        <button class="shop-btn">Shop Now</button>
+                    </div>
+                    <div class="slide hero-text">
+                        <h2>boAt Airdopes 131</h2>
+                        <h1>Featherweight For<br>Comfort All-Day.</h1>
+                        <div class="price">$1,099 <del>$2,990</del></div>
+                        <button class="shop-btn">Shop Now</button>
+                    </div>
+                    <div class="slide hero-text">
+                        <h2>Sony WH-1000XM4</h2>
+                        <h1>Experience The<br>Best Noise Cancelling.</h1>
+                        <div class="price">$24,990 <del>$29,990</del></div>
+                        <button class="shop-btn">Shop Now</button>
+                    </div>
+                </div>
+                <div class="dots">
+                    <span class="active"></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <!-- Fixed Image -->
+            <div class="hero-img">
+                <img id="hero-image" src="./assets/jbl660nc-1.png" alt="Headphones">
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section class="featured-products">
+            <h2>Featured Products</h2>
+            <div class="slider-container">
+                <div class="products-slider" id="featuredSlider"></div>
+                <div class="slider-dots" id="sliderDots"></div>
+            </div>
+        </section>
+
+        <!-- Top Products Section -->
+        <section class="top-products">
+            <h2>Top Products</h2>
+            <div class="filters">
+                <button class="active" data-filter="all">All</button>
+                <button data-filter="headphones">Headphones</button>
+                <button data-filter="earbuds">Earbuds</button>
+                <button data-filter="earphones">Earphones</button>
+                <button data-filter="neckbands">Neckbands</button>
+            </div>
+            <div class="product-grid" id="productGrid"></div>
+        </section>
+
+        <!-- CART SIDEBAR -->
+        <div class="cart-sidebar">
+            <div class="cart-header">
+                <h3>Your Cart</h3>
+                <button class="close-cart">&times;</button>
+            </div>
+            <div class="cart-items"></div>
+            <div class="cart-footer">
+                <h4>Total: ₹<span id="cartTotal">0</span></h4>
+                <div class="cart-actions">
+                    <button class="clear-cart-btn">Clear All</button>
+                    <button class="checkout-btn">Checkout</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="cart-overlay"></div>
+
+        <!-- Product Details Popup -->
+        <div class="product-modal" id="productModal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-body">
+                    <img id="modalImage" src="" alt="Product">
+                    <div class="modal-info">
+                        <h2 id="modalName"></h2>
+                        <p id="modalDesc"></p>
+                        <div class="modal-price">
+                            <span id="modalPrice"></span>
+                            <del id="modalOldPrice"></del>
+                        </div>
+                        <p class="modal-discount" id="modalDiscount"></p>
+                        <p class="modal-stock"><span class="in-stock">✔ In Stock</span></p>
+                        <button class="btn add-to-cart-btn" id="modalAddToCart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Advantages -->
+        <section class="advantages">
+            <h2>Our Advantages</h2>
+            <div class="adv-grid">
+                <div class="adv">
+                    <i class="fas fa-truck"></i>
+                    <div class="adv-text">
+                        <h4>Express Delivery</h4>
+                        <p>Ships in 24 Hours</p>
+                    </div>
+                </div>
+
+                <div class="adv">
+                    <i class="fas fa-shield-alt"></i>
+                    <div class="adv-text">
+                        <h4>Brand Warranty</h4>
+                        <p>100% Original Products</p>
+                    </div>
+                </div>
+
+                <div class="adv">
+                    <i class="fas fa-tags"></i>
+                    <div class="adv-text">
+                        <h4>Exciting Deals</h4>
+                        <p>On all prepaid orders</p>
+                    </div>
+                </div>
+
+                <div class="adv">
+                    <i class="fas fa-lock"></i>
+                    <div class="adv-text">
+                        <h4>Secure Payments</h4>
+                        <p>SSL / Secure Certificate</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Clear Cart Confirmation Popup -->
+        <div class="popup-overlay" id="clearCartPopup">
+            <div class="popup-content">
+                <h3>Clear Cart</h3>
+                <p>Are you sure you want to remove all items from your cart?</p>
+                <div class="popup-actions">
+                    <button class="popup-btn cancel">Cancel</button>
+                    <button class="popup-btn confirm">Yes, Clear</button>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="newsletter">
+            <h3>X-Beat</h3>
+            <p>Subscribe to our Email alerts to receive early discount offers, and new product info.</p>
+            <input type="email" placeholder="Email Address">
+            <button>Subscribe</button>
+        </div>
+
+        <div class="footer-links">
+            <div>
+                <h4>Help</h4>
+                <a href="#">FAQs</a>
+                <a href="#">Track Order</a>
+                <a href="#">Cancel Order</a>
+                <a href="#">Return Order</a>
+                <a href="#">Warranty Info</a>
+            </div>
+            <div>
+                <h4>Policies</h4>
+                <a href="#">Return Policy</a>
+                <a href="#">Security</a>
+                <a href="#">Sitemap</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+            <div>
+                <h4>Company</h4>
+                <a href="#">About Us</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Service Centres</a>
+                <a href="#">Careers</a>
+                <a href="#">Affiliates</a>
+            </div>
+        </div>
+
+        <div class="bottom-bar">
+            <p>2025 | XBeat. All Rights Reserved. Built by | Yumna Ataba</p>
+            <div class="socials">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
